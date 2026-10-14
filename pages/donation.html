@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#063b30">
+  <title>التبرع | WildGuard Jordan</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="../css/landing.css" rel="stylesheet">
+  <link href="../css/donation.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="brand mb-0" href="../landingpage.html">
+        <img class="brand-logo" src="../images/MyLogo.png" alt="شعار WildGuard">
+        <span>WildGuard</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#mainNav" aria-controls="mainNav"
+        aria-expanded="false" aria-label="فتح أو إغلاق قائمة التنقل">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-lg-auto gap-lg-1">
+          <li class="nav-item">
+            <a class="nav-link" href="../landingpage.html">الرئيسية</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="report-creature.html">الإبلاغ عن كائن</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="educational-resources.html">المصادر التعليمية</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="donation.html"> التبرع</a>
+          </li>
+        </ul>
+
+        <div class="nav-actions d-flex flex-column flex-lg-row gap-2">
+          <a class="btn btn-ghost" href="index.html">تسجيل الدخول</a>
+          <a class="btn btn-green" href="index.html#register">إنشاء حساب</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="donation-hero">
+    <div class="container">
+      <div class="donation-hero-content">
+        <span class="donation-tag">نحمي الحياة البرية ونحافظ على سلامة المجتمع</span>
+
+        <h1>احمِ الحياة البرية.<br>وابنِ أردنًا أكثر أمانًا.</h1>
+
+        <p>
+          مساهمتك تدعم التوعية بالحياة البرية، وتساعد على توفير
+          مصادر تعليمية وإرشادات سلامة للمجتمعات في الأردن.
+        </p>
+
+        <a href="#donation-form" class="btn btn-green">
+          تبرع الآن <i class="bi bi-arrow-down"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DONATION FORM -->
+  <section class="donation-section">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+
+        <div class="col-lg-5">
+          <span class="donation-eyebrow">لماذا تبرعك مهم؟</span>
+
+          <h2>معًا نحو مجتمع أكثر وعيًا وأمانًا.</h2>
+
+          <p class="donation-description">
+            ساهم في تسهيل الوصول إلى المعلومات الموثوقة
+            وإرشادات السلامة المتعلقة بالكائنات البرية في الأردن.
+          </p>
+
+          <div class="impact-stat">
+            <i class="bi bi-shield-check"></i>
+            <div>
+              <strong>التوعية المجتمعية</strong>
+              <span>نشر المعرفة حول التعامل الآمن مع الكائنات البرية.</span>
+            </div>
+          </div>
+
+          <div class="impact-stat">
+            <i class="bi bi-book"></i>
+            <div>
+              <strong>المصادر التعليمية</strong>
+              <span>تسهيل الوصول إلى المعلومات والإرشادات المفيدة.</span>
+            </div>
+          </div>
+
+          <div class="impact-stat">
+            <i class="bi bi-tree"></i>
+            <div>
+              <strong>حماية الحياة البرية</strong>
+              <span>تعزيز التعامل المسؤول مع الطبيعة والكائنات البرية.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <form class="donation-card" id="donation-form">
+
+            <span class="donation-step">الخطوة الأولى — اختر نوع التبرع</span>
+
+            <div class="frequency-options">
+              <label class="frequency-option selected">
+                <input type="radio" name="frequency" value="monthly" checked>
+                <span>تبرع شهري</span>
+              </label>
+
+              <label class="frequency-option">
+                <input type="radio" name="frequency" value="once">
+                <span>تبرع لمرة واحدة</span>
+              </label>
+            </div>
+
+            <div class="form-heading">
+              <span class="donation-step">الخطوة الثانية — اختر المبلغ</span>
+              <span class="currency-label">العملة: دينار أردني</span>
+            </div>
+
+            <div class="amount-options">
+              <button type="button" class="amount-btn" data-amount="5">5 د.أ</button>
+              <button type="button" class="amount-btn" data-amount="10">10 د.أ</button>
+              <button type="button" class="amount-btn active" data-amount="20">20 د.أ</button>
+              <button type="button" class="amount-btn" data-amount="50">50 د.أ</button>
+              <button type="button" class="amount-btn" data-amount="custom">مبلغ مخصص</button>
+            </div>
+
+            <label class="custom-amount" id="customAmountWrap" hidden>
+              أدخل مبلغ التبرع (دينار أردني)
+              <input type="number" id="customAmount" min="1" step="0.01"
+                placeholder="مثال: 15" dir="ltr">
+            </label>
+
+            <div class="donation-note">
+              <i class="bi bi-info-circle"></i>
+              اختر المبلغ المناسب لك، فكل مساهمة لها قيمة.
+            </div>
+
+            <span class="donation-step donor-step">
+              الخطوة الثالثة — بيانات المتبرع
+            </span>
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="donorName">الاسم الكامل</label>
+                <input class="form-control" type="text" id="donorName"
+                  name="full_name" autocomplete="name" required>
+              </div>
+
+              <div class="col-md-6">
+                <label for="donorEmail">البريد الإلكتروني</label>
+                <input class="form-control" type="email" id="donorEmail"
+                  name="email" autocomplete="email" required dir="ltr">
+              </div>
+            </div>
+
+            <div class="donation-summary">
+              <div>
+                <span>نوع التبرع</span>
+                <strong id="summaryFrequency">تبرع شهري</strong>
+              </div>
+
+              <div>
+                <span>المبلغ الإجمالي</span>
+                <strong id="summaryAmount">20.00 د.أ</strong>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-green donation-submit">
+              متابعة التبرع <i class="bi bi-arrow-left"></i>
+            </button>
+
+            <p class="donation-disclaimer" id="donationStatus" role="status">
+              هذه نسخة تجريبية من النموذج، ولم يتم ربط الدفع الإلكتروني بعد.
+            </p>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT -->
+  <section class="donation-impact">
+    <div class="container">
+      <div class="donation-section-heading">
+        <span class="donation-eyebrow">مساهمتك تصنع فرقًا</span>
+
+        <h2>كيف تساهم في حماية الإنسان والطبيعة؟</h2>
+
+        <p>دعمك يساعد على تحقيق أهداف WildGuard Jordan.</p>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-md-4">
+          <article class="impact-card">
+            <i class="bi bi-mortarboard"></i>
+            <h3>التوعية المجتمعية</h3>
+            <p>
+              تعزيز الوعي وتوفير إرشادات عملية للتعامل الآمن
+              مع الكائنات البرية.
+            </p>
+          </article>
+        </div>
+
+        <div class="col-md-4">
+          <article class="impact-card">
+            <i class="bi bi-shield-check"></i>
+            <h3>مجتمعات أكثر أمانًا</h3>
+            <p>
+              تسهيل الوصول إلى المعلومات المتعلقة بمشاهدات
+              الكائنات البرية وحالات اللدغ.
+            </p>
+          </article>
+        </div>
+
+        <div class="col-md-4">
+          <article class="impact-card">
+            <i class="bi bi-tree"></i>
+            <h3>حماية مسؤولة</h3>
+            <p>
+              تشجيع التعايش المسؤول مع الكائنات البرية
+              والمحافظة على موائلها الطبيعية.
+            </p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSPARENCY -->
+  <section class="donation-transparency">
+    <div class="container">
+      <i class="bi bi-heart-fill"></i>
+
+      <div>
+        <h2>دعمك يصنع فرقًا</h2>
+        <p>
+          يهدف WildGuard Jordan إلى نشر الوعي بالحياة البرية وتعزيز
+          التثقيف حول السلامة. يجب توضيح كيفية استخدام التبرعات بشفافية.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-4">
+
+      <div class="col-lg-5">
+        <a class="brand footer-brand" href="../landingpage.html">
+          <img class="brand-logo" src="../images/MyLogo.png" alt="شعار WildGuard">
+          WildGuard
+        </a>
+
+        <p class="footer-blurb">
+          اكتشف الحياة البرية في الأردن، وتعلّم كيف تحافظ على سلامتك،
+          وساهم في حماية الإنسان والطبيعة.
+        </p>
+      </div>
+
+      <div class="col-6 col-lg-3">
+        <h2 class="footer-title">استكشف</h2>
+        <ul class="footer-links list-unstyled">
+          <li><a href="../landingpage.html">الرئيسية</a></li>
+          <li><a href="report-creature.html">الإبلاغ عن كائن</a></li>
+          <li><a href="educational-resources.html">المصادر التعليمية</a></li>
+          <li><a href="donation.html">التبرع</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-lg-4">
+        <h2 class="footer-title">تواصل معنا</h2>
+        <ul class="footer-links list-unstyled">
+          <li>
+            <a href="mailto:ahmedkayyali2002@gmail.com">
+              راسلنا عبر البريد الإلكتروني
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <small>&copy; <span id="year">2026</span> WildGuard. جميع الحقوق محفوظة.</small>
+      <a href="#" class="back-to-top">
+        العودة إلى الأعلى <i class="bi bi-arrow-up"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  const form = document.getElementById("donation-form");
+  const amountButtons = document.querySelectorAll(".amount-btn");
+  const customWrap = document.getElementById("customAmountWrap");
+  const customInput = document.getElementById("customAmount");
+  const summaryAmount = document.getElementById("summaryAmount");
+  const summaryFrequency = document.getElementById("summaryFrequency");
+  const statusMessage = document.getElementById("donationStatus");
+
+  let selectedAmount = 20;
+
+  function updateSummary() {
+    const frequency = document.querySelector(
+      'input[name="frequency"]:checked'
+    ).value;
+
+    const amount = selectedAmount === "custom"
+      ? Number(customInput.value)
+      : selectedAmount;
+
+    summaryFrequency.textContent = frequency === "monthly"
+      ? "تبرع شهري"
+      : "تبرع لمرة واحدة";
+
+    summaryAmount.textContent =
+      Number.isFinite(amount) && amount > 0
+        ? amount.toFixed(2) + " د.أ"
+        : "أدخل المبلغ";
+  }
+
+  amountButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      amountButtons.forEach(item => item.classList.remove("active"));
+      button.classList.add("active");
+
+      selectedAmount = button.dataset.amount === "custom"
+        ? "custom"
+        : Number(button.dataset.amount);
+
+      customWrap.hidden = selectedAmount !== "custom";
+      customInput.required = selectedAmount === "custom";
+
+      updateSummary();
+    });
+  });
+
+  document.querySelectorAll('input[name="frequency"]').forEach(input => {
+    input.addEventListener("change", () => {
+      document.querySelectorAll(".frequency-option").forEach(label => {
+        label.classList.toggle(
+          "selected",
+          label.querySelector("input").checked
+        );
+      });
+
+      updateSummary();
+    });
+  });
+
+  customInput.addEventListener("input", updateSummary);
+
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+
+    const amount = selectedAmount === "custom"
+      ? Number(customInput.value)
+      : selectedAmount;
+
+    if (!Number.isFinite(amount) || amount <= 0) {
+      statusMessage.textContent = "يرجى إدخال مبلغ صحيح للتبرع.";
+      customInput.focus();
+      return;
+    }
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    statusMessage.textContent =
+      "النموذج صحيح، لكن الدفع الإلكتروني لم يتم ربطه بعد.";
+  });
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
