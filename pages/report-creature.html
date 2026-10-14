@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>الإبلاغ عن كائن بري | WildGuard الأردن</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="../css/main.css" rel="stylesheet" />
+  <link href="../css/landing.css" rel="stylesheet" />
+  <link href="../css/report-creature.css" rel="stylesheet" />
+
+  <style>
+    body {
+      direction: rtl;
+      text-align: right;
+      font-family: "Cairo", sans-serif;
+    }
+
+    .navbar-nav,
+    .footer-links,
+    .location-grid,
+    .details-grid,
+    .creature-grid,
+    .report-type-tabs {
+      padding-right: 0;
+    }
+
+    .page-heading,
+    .section-heading,
+    .field,
+    .choice-group,
+    .safety-notice,
+    .form-footer,
+    .footer-brand,
+    .footer-blurb {
+      text-align: right;
+    }
+
+    .heading-inline {
+      text-align: right;
+    }
+
+    .input-icon input,
+    .input-icon textarea,
+    .field input,
+    .field textarea,
+    .field select {
+      text-align: right;
+      font-family: "Cairo", sans-serif;
+    }
+
+    .input-icon input,
+    .input-icon textarea {
+      direction: rtl;
+    }
+
+    .report-type-tabs,
+    .creature-grid,
+    .pills {
+      direction: rtl;
+    }
+
+    .upload-area {
+      direction: rtl;
+      text-align: center;
+    }
+
+    .footer-bottom {
+      direction: rtl;
+    }
+
+    .brand {
+      direction: ltr;
+    }
+
+    .location-button,
+    .submit-button {
+      font-family: "Cairo", sans-serif;
+    }
+
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        text-align: right;
+      }
+    }
+  </style>
+</head>
+
+<body class="report-page">
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar navbar-expand-lg navbar-dark" aria-label="التنقل الرئيسي">
+      <div class="container">
+        <a class="brand mb-0" href="../landingpage.html#home">
+          <span>WildGuard</span>
+          <img class="brand-logo theme-logo" src="../images/MyLogo.png" data-light-src="../images/MyLogo.png"
+            data-dark-src="../images/MyLogo.png" alt="WildGuard" />
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+          aria-controls="mainNav" aria-expanded="false" aria-label="فتح أو إغلاق قائمة التنقل">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav mx-lg-auto gap-lg-1">
+            <li class="nav-item">
+              <a class="nav-link" href="../landingpage.html#home">الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./report-creature.html" aria-current="page">
+                الإبلاغ عن كائن 
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="./educational-resources.html" aria-current="page">
+                المصادر التعليمية
+              </a>
+            </li>
+
+          </ul>
+
+          <div class="nav-actions d-flex flex-column flex-lg-row gap-2">
+            <a class="btn btn-ghost" href="./index.html">تسجيل الدخول</a>
+            <a class="btn btn-green" href="./index.html#register">إنشاء حساب</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="report-page-main" id="main">
+    <div class="container report-container">
+
+      <div class="page-heading">
+        <div>
+          <h1>الإبلاغ عن كائن بري</h1>
+          <p class="page-subtitle">
+            ساعدنا في التعرّف على الكائنات البرية وتحسين مستوى السلامة في منطقتك.
+          </p>
+        </div>
+      </div>
+
+      <form class="report-form">
+
+        <!-- القسم الأول: نوع الكائن -->
+        <section class="form-section">
+          <div class="section-heading">
+            <span class="step-number">1</span>
+            <div>
+              <h2>ما الكائن الذي وجدته؟</h2>
+              <p>اختر الخيار الأقرب إلى ما شاهدته.</p>
+            </div>
+            <span class="field-tag required-tag">مطلوب</span>
+          </div>
+
+          <div class="report-type-tabs">
+            <label class="type-tab selected">
+              <input type="radio" name="report-type" value="individual" checked />
+              <i class="bi bi-bug-fill"></i>
+              كائن واحد
+            </label>
+
+            <label class="type-tab">
+              <input type="radio" name="report-type" value="nest" />
+              <i class="bi bi-house-door"></i>
+              عش أو مستعمرة
+            </label>
+          </div>
+
+          <div class="creature-grid">
+            <label class="creature-card chosen">
+              <input type="radio" name="creature" value="snake" checked />
+              <span class="creature-emoji">🐍</span>
+              <span class="creature-name">ثعبان</span>
+              <i class="bi bi-check-circle-fill choice-check"></i>
+            </label>
+
+            <label class="creature-card">
+              <input type="radio" name="creature" value="scorpion" />
+              <span class="creature-emoji">🦂</span>
+              <span class="creature-name">عقرب</span>
+            </label>
+
+            <label class="creature-card">
+              <input type="radio" name="creature" value="spider" />
+              <span class="creature-emoji">🕷️</span>
+              <span class="creature-name">عنكبوت</span>
+            </label>
+
+            <label class="creature-card">
+              <input type="radio" name="creature" value="bee" />
+              <span class="creature-emoji">🐝</span>
+              <span class="creature-name">نحلة</span>
+            </label>
+
+            <label class="creature-card">
+              <input type="radio" name="creature" value="wasp" />
+              <span class="creature-emoji">🪰</span>
+              <span class="creature-name">دبور</span>
+            </label>
+
+            <label class="creature-card">
+              <input type="radio" name="creature" value="centipede" />
+              <span class="creature-emoji">🐛</span>
+              <span class="creature-name">حريش (أم أربعة وأربعين)</span>
+            </label>
+
+            <label class="creature-card">
+              <input type="radio" name="creature" value="other-insects" />
+              <span class="creature-emoji">🪲</span>
+              <span class="creature-name">حشرات أخرى</span>
+            </label>
+
+            <label class="creature-card">
+              <input type="radio" name="creature" value="other-wildlife" />
+              <span class="creature-emoji">🦎</span>
+              <span class="creature-name">كائن بري آخر</span>
+            </label>
+
+            <label class="creature-card">
+              <input type="radio" name="creature" value="bee-hive" />
+              <span class="creature-emoji">🍯</span>
+              <span class="creature-name">خلية نحل</span>
+            </label>
+
+            <label class="creature-card">
+              <input type="radio" name="creature" value="wasp-nest" />
+              <span class="creature-emoji">🪹</span>
+              <span class="creature-name">عش دبابير</span>
+            </label>
+
+            <label class="creature-card">
+              <input type="radio" name="creature" value="other-nest" />
+              <span class="creature-emoji">🌿</span>
+              <span class="creature-name">عش أو مستعمرة أخرى</span>
+            </label>
+          </div>
+        </section>
+
+        <!-- القسم الثاني: الصورة -->
+        <section class="form-section">
+          <div class="section-heading">
+            <span class="step-number">2</span>
+            <div class="heading-inline">
+              <h2>إرفاق صورة</h2>
+              <span class="field-tag optional-tag">اختياري</span>
+              <p>أرفق صورة فقط إذا كان ذلك آمنًا.</p>
+            </div>
+          </div>
+
+          <label class="upload-area">
+            <input type="file" accept=".jpg,.jpeg,.png,.webp" />
+            <i class="bi bi-cloud-arrow-up upload-icon"></i>
+            <strong>اسحب الصورة وأفلتها هنا أو <span>اضغط لاختيار صورة</span></strong>
+            <small>JPG أو JPEG أو PNG أو WEBP · الحد الأقصى 5 ميغابايت</small>
+          </label>
+        </section>
+
+        <!-- القسم الثالث: الموقع -->
+        <section class="form-section">
+          <div class="section-heading">
+            <span class="step-number">3</span>
+            <div>
+              <h2>أين وجدت الكائن؟</h2>
+              <p>حدّد الموقع لمساعدة الفريق المختص على التعامل مع البلاغ.</p>
+            </div>
+            <span class="field-tag required-tag">مطلوب</span>
+          </div>
+
+          <div class="location-grid">
+            <label class="field">
+              <span>المحافظة <b>*</b></span>
+              <select name="governorate" required>
+                <option value="">اختر المحافظة</option>
+                <option value="Amman">عمّان</option>
+                <option value="Irbid">إربد</option>
+                <option value="Zarqa">الزرقاء</option>
+                <option value="Balqa">البلقاء</option>
+                <option value="Madaba">مادبا</option>
+                <option value="Karak">الكرك</option>
+                <option value="Tafilah">الطفيلة</option>
+                <option value="Maan">معان</option>
+                <option value="Aqaba">العقبة</option>
+                <option value="Mafraq">المفرق</option>
+                <option value="Jerash">جرش</option>
+                <option value="Ajloun">عجلون</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>المنطقة أو الحي بالتحديد <b>*</b></span>
+              <div class="input-icon">
+                <i class="bi bi-geo-alt"></i>
+                <input type="text" name="area" placeholder="مثال: خلدا، دابوق، شارع الجامعة..." required />
+              </div>
+            </label>
+
+            <label class="field">
+              <span>معلم قريب <em>(اختياري)</em></span>
+              <div class="input-icon">
+                <i class="bi bi-pin-map"></i>
+                <input type="text" name="landmark" placeholder="بالقرب من مدرسة أو حديقة أو مبنى..." />
+              </div>
+            </label>
+          </div>
+
+          <button class="location-button" type="button">
+            <i class="bi bi-crosshair"></i>
+            استخدام موقعي الحالي
+          </button>
+        </section>
+
+        <!-- القسم الرابع: الوصف -->
+        <section class="form-section">
+          <div class="section-heading">
+            <span class="step-number">4</span>
+            <div>
+              <h2>ماذا شاهدت؟</h2>
+              <p>صف الكائن والظروف التي شاهدته فيها.</p>
+            </div>
+            <span class="field-tag required-tag">مطلوب</span>
+          </div>
+
+          <label class="field">
+            <span class="visually-hidden">الوصف</span>
+            <textarea name="description" maxlength="500"
+              placeholder="صف ما شاهدته، وأين وجدته، وأي تفاصيل أخرى ذات صلة..." required></textarea>
+            <small class="textarea-hint">
+              يُرجى عدم الاقتراب من الكائن أو إزعاجه لجمع مزيد من المعلومات.
+            </small>
+          </label>
+        </section>
+
+        <!-- القسم الخامس: تفاصيل إضافية -->
+        <section class="form-section details-section">
+          <div class="section-heading">
+            <span class="step-number">5</span>
+            <div class="heading-inline">
+              <h2>تفاصيل إضافية</h2>
+              <span class="field-tag optional-tag">اختياري</span>
+              <p>ساعدنا على فهم المشاهدة بصورة أفضل.</p>
+            </div>
+          </div>
+
+          <div class="details-grid">
+            <fieldset class="choice-group">
+              <legend>الحجم التقريبي</legend>
+              <div class="pills">
+                <label><input type="radio" name="size" value="small" /><span>صغير <small>(أقل من 15
+                      سم)</small></span></label>
+                <label><input type="radio" name="size" value="medium" /><span>متوسط <small>(15–50
+                      سم)</small></span></label>
+                <label><input type="radio" name="size" value="large" /><span>كبير <small>(أكثر من 50
+                      سم)</small></span></label>
+                <label><input type="radio" name="size" value="unknown" /><span>غير معروف</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="choice-group">
+              <legend>مكان المشاهدة</legend>
+              <div class="pills">
+                <label><input type="radio" name="environment" value="indoor" /><span>داخل المنزل</span></label>
+                <label><input type="radio" name="environment" value="garden" /><span>حديقة أو ساحة</span></label>
+                <label><input type="radio" name="environment" value="public" /><span>شارع أو مكان عام</span></label>
+                <label><input type="radio" name="environment" value="rural" /><span>مزرعة أو منطقة ريفية</span></label>
+                <label><input type="radio" name="environment" value="natural" /><span>منطقة طبيعية</span></label>
+                <label><input type="radio" name="environment" value="other" /><span>مكان آخر</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="choice-group">
+              <legend>عدد الكائنات</legend>
+              <div class="pills">
+                <label><input type="radio" name="quantity" value="single" /><span>واحد</span></label>
+                <label><input type="radio" name="quantity" value="several" /><span>عدة كائنات</span></label>
+                <label><input type="radio" name="quantity" value="many" /><span>عدد كبير</span></label>
+                <label><input type="radio" name="quantity" value="unknown" /><span>غير معروف</span></label>
+              </div>
+            </fieldset>
+          </div>
+        </section>
+
+        <div class="safety-notice">
+          <i class="bi bi-exclamation-triangle"></i>
+          <div>
+            <strong>تنبيه للسلامة</strong>
+            <p>
+              حافظ على مسافة آمنة. لا تلمس الكائنات البرية الخطرة ولا تحاول الإمساك بها أو الاقتراب منها.
+              لا تعرّض سلامتك للخطر من أجل التقاط صورة.
+            </p>
+          </div>
+        </div>
+
+        <div class="form-footer">
+          <p>
+            <i class="bi bi-info-circle"></i>
+            سيُرسل بلاغك إلى فريقنا لمراجعته. شكرًا لمساهمتك في جعل الأردن أكثر أمانًا.
+          </p>
+          <button class="submit-button" type="submit">
+            إرسال البلاغ <i class="bi bi-arrow-left"></i>
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <a class="brand footer-brand" href="../landingpage.html#home">
+            <img class="brand-logo theme-logo" src="../images/MyLogo.png" data-light-src="../images/MyLogo.png"
+              data-dark-src="../images/MyLogo.png" alt="WildGuard" />
+            WildGuard
+          </a>
+          <p class="footer-blurb">
+            اكتشف الحياة البرية في الأردن، وتعلّم كيف تحافظ على سلامتك،
+            وساهم في حماية الإنسان والطبيعة.
+          </p>
+        </div>
+
+        <nav class="col-6 col-lg-2 offset-lg-1" aria-labelledby="footer-explore">
+          <h2 class="footer-title" id="footer-explore">استكشف</h2>
+          <ul class="footer-links list-unstyled">
+            <li><a href="../landingpage.html#home">الرئيسية</a></li>
+            <li><a href="../landingpage.html#features">المميزات</a></li>
+            <li><a href="../landingpage.html#about">من نحن</a></li>
+            <li><a href="../landingpage.html#contact">تواصل معنا</a></li>
+          </ul>
+        </nav>
+
+        <nav class="col-6 col-lg-2" aria-labelledby="footer-account">
+          <h2 class="footer-title" id="footer-account">الحساب</h2>
+          <ul class="footer-links list-unstyled">
+            <li><a href="./index.html">تسجيل الدخول</a></li>
+            <li><a href="./index.html#register">إنشاء حساب</a></li>
+          </ul>
+        </nav>
+
+        <div class="col-lg-2">
+          <h2 class="footer-title">تواصل معنا</h2>
+          <address class="footer-links mb-0">
+            <a href="mailto:ahmedkayyali2002@gmail.com">
+              ahmedkayyali2002@gmail.com
+            </a>
+          </address>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <small>
+          © <span id="year">2026</span> WildGuard. جميع الحقوق محفوظة.
+        </small>
+        <a href="../landingpage.html#home" class="back-to-top">
+          العودة إلى الأعلى <i class="bi bi-arrow-up" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/landingpage.js"></script>
+  <script type="module" src="../js/theme.js"></script>
+
+</body>
+
+</html>

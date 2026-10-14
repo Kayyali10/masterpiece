@@ -1,65 +1,87 @@
 <!doctype html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WildGuard</title>
+  <title>WildGuard - الحياة البرية في الأردن</title>
   <meta name="theme-color" content="#05352a" />
 
-  <!-- Lets the CSS hide .reveal items only when JavaScript is running -->
+  <!-- إخفاء العناصر المتحركة فقط عند تشغيل JavaScript -->
   <script>
     document.documentElement.classList.add("js");
   </script>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <!-- Shared theme (variables, base, buttons) + landing page styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- ملفات التنسيق الأصلية -->
   <link href="./css/main.css" rel="stylesheet" />
   <link href="./css/landing.css" rel="stylesheet" />
+
+  
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
+  <a class="skip-link" href="#main">تجاوز إلى المحتوى الرئيسي</a>
 
-  <!--  HEADER / NAVIGATION  -->
+  <!-- HEADER / NAVIGATION -->
   <header class="site-header" id="siteHeader">
-    <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Primary">
+    <nav class="navbar navbar-expand-lg navbar-dark" aria-label="التنقل الرئيسي">
       <div class="container">
         <a class="brand mb-0" href="index.html">
-           <img class="brand-logo theme-logo" src="../images/MyLogo.png" data-light-src="../images/Mylogo.png"
-          data-dark-src="../images/Mylogo.png" alt="WildGuard" />
+          <img class="brand-logo theme-logo" src="images/MyLogo.png"
+            data-light-src="../images/Mylogo.png"
+            data-dark-src="../images/Mylogo.png" alt="WildGuard" />
           <span>WildGuard</span>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-          aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#mainNav" aria-controls="mainNav"
+          aria-expanded="false" aria-label="فتح أو إغلاق قائمة التنقل">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="navbar-nav mx-lg-auto gap-lg-1">
-            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
             <li class="nav-item">
-              <a class="nav-link" href="#features">Features</a>
+              <a class="nav-link" href="#home">الرئيسية</a>
+            </li>
+
+            <!--
+            <li class="nav-item">
+              <a class="nav-link" href="#features">المميزات</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#about">About us</a>
+              <a class="nav-link" href="#about">من نحن</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
+              <a class="nav-link" href="#contact">تواصل معنا</a>
+            </li>
+            -->
+
+            <li class="nav-item">
+              <a class="nav-link" href="pages/report-creature.html">الإبلاغ عن كائن</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="pages/educational-resources.html">المصادر التعليمية</a>
             </li>
           </ul>
 
           <div class="nav-actions d-flex flex-column flex-lg-row gap-2">
-            <!-- Sign-in form (pages/index.html) -->
-            <a class="btn btn-ghost" href="./pages/index.html">Login</a>
-            <!-- Same page, opens the registration form (#register) -->
-            <a class="btn btn-green" href="./pages/index.html#register">Register</a>
-            <!-- Dark Button -->
-            <button style="margin-top: -15px; background-color: #063b30;" class="theme-btn" id="themeToggle" type="button" aria-label="Change theme">
+            <a class="btn btn-ghost" href="./pages/index.html">تسجيل الدخول</a>
+            <a class="btn btn-green" href="./pages/index.html#register">إنشاء حساب</a>
+
+            <!-- زر الوضع الداكن الأصلي -->
+            <!--
+            <button style="margin-top: -15px; background-color: #063b30;"
+              class="theme-btn" id="themeToggle" type="button"
+              aria-label="تغيير المظهر">
               <i class="bi bi-moon-fill" id="themeIcon"></i>
             </button>
+            -->
           </div>
         </div>
       </div>
@@ -67,107 +89,137 @@
   </header>
 
   <main id="main">
-    <!--  HERO  -->
+
+    <!-- HERO -->
     <section class="hero" id="home" aria-labelledby="hero-title">
-      <!-- Decorative floating bubbles, generated by js/landing.js -->
       <div class="bubbles" aria-hidden="true"></div>
 
       <div class="container hero-inner">
-        <div class="hero-logo" role="img" aria-label="WildGuard logo">
+        <div class="hero-logo" role="img" aria-label="شعار WildGuard">
           <a class="brand mb-0" href="index.html">
-            <img class=" mark" src="../images/MyLogo.png" alt="WildGuard" />
+            <img class="mark" src="images/MyLogo.png" alt="WildGuard" />
           </a>
           <span class="word">WildGuard</span>
         </div>
 
-        <h1 id="hero-title">Discover Wildlife. Stay Safe.</h1>
+        <h1 id="hero-title">اكتشف الحياة البرية، وحافظ على سلامتك</h1>
+
         <p class="hero-lead">
-          WildGuard helps you discover and identify wildlife found in Jordan, including snakes, scorpions, spiders,
-          insects, and wasps. Learn how to stay safe, report encounters, and connect with local experts when you need
-          help.
+          يساعدك WildGuard على اكتشاف الكائنات البرية الموجودة في الأردن والتعرّف عليها،
+          بما فيها الثعابين والعقارب والعناكب والحشرات والدبابير.
+          تعلّم كيف تحافظ على سلامتك، وأبلغ عن المشاهدات،
+          وتواصل مع الخبراء المحليين عندما تحتاج إلى المساعدة.
         </p>
+
         <div class="hero-cta">
           <a class="btn btn-green btn-lg" href="./pages/index.html#register">
-            Create your account
+            أنشئ حسابك
             <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i>
           </a>
-          <a class="btn btn-ghost btn-lg" href="./pages/index.html">Login</a>
+
+          <a class="btn btn-ghost btn-lg" href="./pages/index.html">تسجيل الدخول</a>
         </div>
 
-        <!-- <p class="hero-note">
-          Built for instructors, university lecturers and trainers.
-        </p> -->
+        <!--
+        <p class="hero-note">
+          منصة مصممة للمدربين والمحاضرين الجامعيين والمدربين المتخصصين.
+        </p>
+        -->
       </div>
 
-      <a class="scroll-hint" href="#features" aria-label="Scroll to features">
+      <a class="scroll-hint" href="#features" aria-label="انتقل إلى المميزات">
         <i class="bi bi-chevron-down" aria-hidden="true"></i>
       </a>
     </section>
 
-    <!-- ============ FEATURES ============ -->
+    <!-- FEATURES -->
     <section class="section section-soft" id="features" aria-labelledby="features-title">
       <div class="container">
         <header class="section-head reveal">
-          <p class="eyebrow">Features</p>
-          <h2 id="features-title">Explore Wildlife. Stay Protected.</h2>
+          <p class="eyebrow">المميزات</p>
+          <h2 id="features-title">اكتشف الحياة البرية، وحافظ على سلامتك</h2>
           <p>
-            Discover wildlife across Jordan, learn about local species, report encounters, and explore practical safety
-            tips to help protect yourself and the environment.
+            اكتشف الكائنات البرية في مختلف أنحاء الأردن، وتعرّف على الأنواع المحلية،
+            وأبلغ عن المشاهدات، واستكشف إرشادات السلامة العملية
+            التي تساعدك على حماية نفسك والبيئة.
           </p>
         </header>
 
         <ul class="row g-3 g-lg-4 list-unstyled mb-0">
           <li class="col-md-6 col-lg-4 reveal">
             <article class="feature-card">
-              <span class="feature-icon ic-green"><i class="bi bi-binoculars" aria-hidden="true"></i></span>
-              <h3>Discover Species</h3>
+              <span class="feature-icon ic-green">
+                <i class="bi bi-binoculars" aria-hidden="true"></i>
+              </span>
+              <h3>اكتشف الأنواع</h3>
               <p>
-                Explore snakes, scorpions, spiders, insects, and other wildlife found in Jordan.
+                استكشف الثعابين والعقارب والعناكب والحشرات وغيرها
+                من الكائنات البرية الموجودة في الأردن.
               </p>
             </article>
           </li>
+
           <li class="col-md-6 col-lg-4 reveal">
             <article class="feature-card">
-              <span class="feature-icon ic-blue"><i class="bi bi-camera" aria-hidden="true"></i></span>
-              <h3>Identify Wildlife</h3>
+              <span class="feature-icon ic-blue">
+                <i class="bi bi-camera" aria-hidden="true"></i>
+              </span>
+              <h3>التعرّف على الكائنات</h3>
               <p>
-                Learn to recognize wildlife through photos, species descriptions, and habitat information.
+                تعلّم كيفية التعرّف على الكائنات البرية من خلال الصور
+                وأوصاف الأنواع والمعلومات المتعلقة بموائلها.
               </p>
             </article>
           </li>
+
           <li class="col-md-6 col-lg-4 reveal">
             <article class="feature-card">
-              <span class="feature-icon ic-red"><i class="bi bi-geo-alt" aria-hidden="true"></i></span>
-              <h3>Report an Encounter</h3>
+              <span class="feature-icon ic-red">
+                <i class="bi bi-geo-alt" aria-hidden="true"></i>
+              </span>
+              <h3>الإبلاغ عن مشاهدة</h3>
               <p>
-                Submit wildlife sightings with photos, location details, and a description of the encounter.
+                أرسل بلاغات عن مشاهدات الحياة البرية مع الصور
+                وتفاصيل الموقع ووصف المشاهدة.
               </p>
             </article>
           </li>
+
           <li class="col-md-6 col-lg-4 reveal">
             <article class="feature-card">
-              <span class="feature-icon ic-amber"><i class="bi bi-clipboard-data" aria-hidden="true"></i></span>
-              <h3>Wildlife Reports</h3>
+              <span class="feature-icon ic-amber">
+                <i class="bi bi-clipboard-data" aria-hidden="true"></i>
+              </span>
+              <h3>تقارير الحياة البرية</h3>
               <p>
-                View reported encounters and learn about wildlife sightings in different areas.
+                اطّلع على البلاغات وتعرّف على مشاهدات الحياة البرية
+                في مناطق مختلفة.
               </p>
             </article>
           </li>
+
           <li class="col-md-6 col-lg-4 reveal">
             <article class="feature-card">
-              <span class="feature-icon ic-purple"><i class="bi bi-shield-check" aria-hidden="true"></i></span>
-              <h3>Safety Guidelines</h3>
+              <span class="feature-icon ic-purple">
+                <i class="bi bi-shield-check" aria-hidden="true"></i>
+              </span>
+              <h3>إرشادات السلامة</h3>
               <p>
-                Follow practical safety advice on how to respond when encountering potentially dangerous wildlife.
+                اتبع نصائح السلامة العملية لمعرفة كيفية التصرف
+                عند مواجهة كائنات برية قد تشكّل خطرًا.
               </p>
             </article>
           </li>
+
           <li class="col-md-6 col-lg-4 reveal">
             <article class="feature-card">
-              <span class="feature-icon ic-green"><i class="bi bi-book-half" aria-hidden="true"></i></span>
-              <h3>Educational Resources</h3>
+              <span class="feature-icon ic-green">
+                <i class="bi bi-book-half" aria-hidden="true"></i>
+              </span>
+              <h3>المصادر التعليمية</h3>
               <p>
-                Explore articles and educational materials about wildlife awareness and environmental conservation.
+                استكشف المقالات والمواد التعليمية المتعلقة بالوعي
+                بالحياة البرية والحفاظ على البيئة.
               </p>
             </article>
           </li>
@@ -175,56 +227,69 @@
       </div>
     </section>
 
-    <!--  ABOUT US  -->
+    <!-- ABOUT US -->
     <section class="section section-white" id="about" aria-labelledby="about-title">
       <div class="container">
         <div class="row g-4 g-lg-5 align-items-center">
           <div class="col-lg-6 reveal">
-            <p class="eyebrow">About us</p>
+            <p class="eyebrow">من نحن</p>
+
             <h2 id="about-title">
-              Understanding Wildlife Starts Here.
+              فهم الحياة البرية يبدأ من هنا
             </h2>
+
             <p class="about-text">
-              WildGuard helps you discover wildlife found in Jordan, including snakes, scorpions, spiders, and other
-              creatures. Our goal is to make wildlife information accessible and help people understand how to interact
-              safely with nature.
+              يساعدك WildGuard على اكتشاف الكائنات البرية الموجودة في الأردن،
+              بما فيها الثعابين والعقارب والعناكب وغيرها من الكائنات.
+              هدفنا هو تسهيل الوصول إلى المعلومات المتعلقة بالحياة البرية،
+              ومساعدة الناس على فهم كيفية التعامل مع الطبيعة بأمان.
             </p>
+
             <p class="about-text">
-              We aim to raise awareness, encourage responsible wildlife reporting, and connect people with reliable
-              information to help protect both communities and wildlife.
+              نسعى إلى رفع مستوى الوعي، وتشجيع الإبلاغ المسؤول عن مشاهدات الحياة البرية،
+              وربط الناس بالمعلومات الموثوقة للمساعدة في حماية المجتمعات والكائنات البرية.
             </p>
           </div>
 
           <div class="col-lg-6 reveal">
             <div class="steps-card">
-              <h3 class="steps-title">How it works</h3>
+              <h3 class="steps-title">كيف تعمل المنصة؟</h3>
+
               <ol class="steps">
                 <li>
                   <span class="step-body">
-                    <strong>Create your account</strong>
-                    <span>Register for a WildGuard account to explore wildlife information and access the platform's
-                      features.</span>
-                  </span>
-                </li>
-                <li>
-                  <span class="step-body">
-                    <strong>Discover Wildlife</strong>
-                    <span>Explore information about local species, their habitats, and their characteristics.</span>
-                  </span>
-                </li>
-                <li>
-                  <span class="step-body">
-                    <strong>Report an Encounter</strong>
+                    <strong>أنشئ حسابك</strong>
                     <span>
-                      Share a wildlife sighting with a photo, location, and description.
+                      سجّل حسابًا في WildGuard لاستكشاف معلومات الحياة البرية
+                      والاستفادة من مميزات المنصة.
                     </span>
                   </span>
                 </li>
+
                 <li>
                   <span class="step-body">
-                    <strong>Learn and Stay Safe</strong>
+                    <strong>اكتشف الحياة البرية</strong>
                     <span>
-                      Follow safety guidelines and explore educational resources about wildlife.
+                      استكشف معلومات عن الأنواع المحلية وموائلها وخصائصها.
+                    </span>
+                  </span>
+                </li>
+
+                <li>
+                  <span class="step-body">
+                    <strong>أبلغ عن مشاهدة</strong>
+                    <span>
+                      شارك مشاهدة لكائن بري مع صورة وموقع ووصف للمشاهدة.
+                    </span>
+                  </span>
+                </li>
+
+                <li>
+                  <span class="step-body">
+                    <strong>تعلّم وحافظ على سلامتك</strong>
+                    <span>
+                      اتبع إرشادات السلامة واستكشف المصادر التعليمية
+                      المتعلقة بالحياة البرية.
                     </span>
                   </span>
                 </li>
@@ -235,32 +300,38 @@
       </div>
     </section>
 
-    <!-- ============ CALL TO ACTION ============ -->
+    <!-- CALL TO ACTION -->
     <section class="cta-band" aria-labelledby="cta-title">
       <div class="container">
         <div class="cta-card reveal">
-          <h2 id="cta-title">Ready to Explore Jordan’s Wildlife?</h2>
+          <h2 id="cta-title">هل أنت مستعد لاستكشاف الحياة البرية في الأردن؟</h2>
+
           <p>
-            Discover local species, learn how to stay safe, and help raise wildlife awareness.
+            اكتشف الأنواع المحلية، وتعلّم كيف تحافظ على سلامتك،
+            وساهم في نشر الوعي بالحياة البرية.
           </p>
+
           <div class="hero-cta">
-            <a class="btn btn-green btn-lg" href="./pages/index.html#register">Create your account</a>
-            <a class="btn btn-ghost btn-lg" href="./pages/index.html">Login</a>
+            <a class="btn btn-green btn-lg" href="./pages/index.html#register">
+              أنشئ حسابك
+            </a>
+            <a class="btn btn-ghost btn-lg" href="./pages/index.html">
+              تسجيل الدخول
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ CONTACT ============ -->
+    <!-- CONTACT -->
     <section class="section section-soft" id="contact" aria-labelledby="contact-title">
       <div class="container">
         <header class="section-head reveal">
-          <p class="eyebrow">Contact</p>
-          <h2 id="contact-title">Get in touch</h2>
+          <p class="eyebrow">تواصل معنا</p>
+          <h2 id="contact-title">ابقَ على تواصل</h2>
           <p>
-            Have questions about local wildlife, safety guidelines, or a wildlife encounter? Contact us and we'll be
-            happy to hear from you.as for your classes? Send us a message
-            and we'll get back to you.
+            هل لديك أسئلة حول الحياة البرية المحلية أو إرشادات السلامة
+            أو واجهت كائنًا بريًا؟ أرسل لنا رسالة وسنسعد بالتواصل معك.
           </p>
         </header>
 
@@ -268,26 +339,36 @@
           <div class="col-lg-5 reveal">
             <ul class="contact-list list-unstyled mb-0">
               <li>
-                <span class="feature-icon ic-green"><i class="bi bi-envelope" aria-hidden="true"></i></span>
+                <span class="feature-icon ic-green">
+                  <i class="bi bi-envelope" aria-hidden="true"></i>
+                </span>
                 <div>
-                  <h3>Email us</h3>
+                  <h3>راسلنا عبر البريد الإلكتروني</h3>
                   <a href="mailto:ahmedkayyali2002@gmail.com?subject=Contact%20WildGuard">
                     ahmedkayyali2002@gmail.com
                   </a>
                 </div>
               </li>
+
               <li>
-                <span class="feature-icon ic-blue"><i class="bi bi-chat-dots" aria-hidden="true"></i></span>
+                <span class="feature-icon ic-blue">
+                  <i class="bi bi-chat-dots" aria-hidden="true"></i>
+                </span>
                 <div>
-                  <h3>Share feedback</h3>
-                  <p>Share your thoughts and suggestions to help us improve WildGuard.</p>
+                  <h3>شاركنا ملاحظاتك</h3>
+                  <p>
+                    شاركنا أفكارك واقتراحاتك لمساعدتنا على تحسين WildGuard.
+                  </p>
                 </div>
               </li>
+
               <li>
-                <span class="feature-icon ic-amber"><i class="bi bi-box-arrow-in-right" aria-hidden="true"></i></span>
+                <span class="feature-icon ic-amber">
+                  <i class="bi bi-box-arrow-in-right" aria-hidden="true"></i>
+                </span>
                 <div>
-                  <h3>Already registered?</h3>
-                  <a href="./pages/index.html">Login to your dashboard</a>
+                  <h3>هل لديك حساب بالفعل؟</h3>
+                  <a href="./pages/index.html">سجّل الدخول إلى لوحة التحكم</a>
                 </div>
               </li>
             </ul>
@@ -297,29 +378,38 @@
             <form id="contactForm" class="contact-form needs-validation" novalidate>
               <div class="row g-3">
                 <div class="col-md-6">
-                  <label class="form-label" for="c-name">Your name</label>
-                  <input id="c-name" name="name" type="text" class="form-control" autocomplete="name" required />
-                  <div class="invalid-feedback">Please enter your name.</div>
+                  <label class="form-label" for="c-name">الاسم</label>
+                  <input id="c-name" name="name" type="text"
+                    class="form-control" autocomplete="name" required />
+                  <div class="invalid-feedback">يرجى إدخال اسمك.</div>
                 </div>
+
                 <div class="col-md-6">
-                  <label class="form-label" for="c-email">Email</label>
-                  <input id="c-email" name="email" type="email" class="form-control" placeholder="" autocomplete="email"
+                  <label class="form-label" for="c-email">البريد الإلكتروني</label>
+                  <input id="c-email" name="email" type="email"
+                    class="form-control" placeholder="" autocomplete="email"
                     required />
-                  <div class="invalid-feedback">Please enter a valid email.</div>
-                </div>
-                <div class="col-12">
-                  <label class="form-label" for="c-message">Message</label>
-                  <textarea id="c-message" name="message" class="form-control" rows="5" minlength="10"
-                    required></textarea>
                   <div class="invalid-feedback">
-                    Please write a message (at least 10 characters).
+                    يرجى إدخال بريد إلكتروني صحيح.
                   </div>
                 </div>
+
+                <div class="col-12">
+                  <label class="form-label" for="c-message">الرسالة</label>
+                  <textarea id="c-message" name="message"
+                    class="form-control" rows="5" minlength="10"
+                    required></textarea>
+                  <div class="invalid-feedback">
+                    يرجى كتابة رسالة لا تقل عن 10 أحرف.
+                  </div>
+                </div>
+
                 <div class="col-12">
                   <button class="btn btn-green btn-lg w-100" type="submit">
-                    Send message
+                    إرسال الرسالة
                   </button>
-                  <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+                  <p id="formStatus" class="form-status" role="status"
+                    aria-live="polite"></p>
                 </div>
               </div>
             </form>
@@ -329,42 +419,44 @@
     </section>
   </main>
 
-  <!--  FOOTER  -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
       <div class="row g-4">
         <div class="col-lg-5">
           <a class="brand footer-brand" href="#home">
-            <img class="brand-logo theme-logo" src="../images/MyLogo.png" data-light-src="../images/Mylogo.png"
-            data-dark-src="../images/Mylogo.png" alt="WildGuard" />
+            <img class="brand-logo theme-logo" src="images/MyLogo.png"
+              data-light-src="../images/Mylogo.png"
+              data-dark-src="../images/Mylogo.png" alt="WildGuard" />
             WildGuard
           </a>
+
           <p class="footer-blurb">
-            Discover wildlife in Jordan, learn how to stay safe,
-            and help protect people and nature.
+            اكتشف الحياة البرية في الأردن، وتعلّم كيف تحافظ على سلامتك،
+            وساهم في حماية الإنسان والطبيعة.
           </p>
         </div>
 
         <nav class="col-6 col-lg-2 offset-lg-1" aria-labelledby="footer-explore">
-          <h2 class="footer-title" id="footer-explore">Explore</h2>
+          <h2 class="footer-title" id="footer-explore">استكشف</h2>
           <ul class="footer-links list-unstyled">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#about">About us</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#features">المميزات</a></li>
+            <li><a href="#about">من نحن</a></li>
+            <li><a href="#contact">تواصل معنا</a></li>
           </ul>
         </nav>
 
         <nav class="col-6 col-lg-2" aria-labelledby="footer-account">
-          <h2 class="footer-title" id="footer-account">Account</h2>
+          <h2 class="footer-title" id="footer-account">الحساب</h2>
           <ul class="footer-links list-unstyled">
-            <li><a href="./pages/index.html">Login</a></li>
-            <li><a href="./pages/index.html#register">Register</a></li>
+            <li><a href="./pages/index.html">تسجيل الدخول</a></li>
+            <li><a href="./pages/index.html#register">إنشاء حساب</a></li>
           </ul>
         </nav>
 
         <div class="col-lg-2">
-          <h2 class="footer-title">Contact</h2>
+          <h2 class="footer-title">تواصل معنا</h2>
           <address class="footer-links mb-0">
             <a href="mailto:ahmedkayyali2002@gmail.com">
               ahmedkayyali2002@gmail.com
@@ -376,16 +468,19 @@
       <div class="footer-bottom">
         <small>
           &copy; <span id="year">2026</span>
-          WildGuard. All rights reserved.
+          WildGuard. جميع الحقوق محفوظة.
         </small>
-        <a href="#home" class="back-to-top">Back to top <i class="bi bi-arrow-up" aria-hidden="true"></i></a>
+
+        <a href="#home" class="back-to-top">
+          العودة إلى الأعلى
+          <i class="bi bi-arrow-up" aria-hidden="true"></i>
+        </a>
       </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./js/landingpage.js"></script>
-   <script type="module" src="../js/theme.js"></script>
+  <!-- <script type="module" src="../js/theme.js"></script> -->
 </body>
-
 </html>

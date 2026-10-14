@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>الحياة البرية في الأردن | WildGuard</title>
+  <link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="../css/main.css" rel="stylesheet">
+   <link href="../css/landing.css" rel="stylesheet" />
+  <link href="../css/educational-resources.css" rel="stylesheet">
+</head>
+
+<body class="education-page">
+   <header class="site-header" id="siteHeader">
+    <nav class="navbar navbar-expand-lg navbar-dark" aria-label="التنقل الرئيسي">
+      <div class="container">
+        <a class="brand mb-0" href="../landingpage.html#home">
+          <img class="brand-logo theme-logo" src="../images/MyLogo.png" data-light-src="../images/MyLogo.png"
+            data-dark-src="../images/MyLogo.png" alt="WildGuard" />
+          <span>WildGuard</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+          aria-controls="mainNav" aria-expanded="false" aria-label="فتح أو إغلاق قائمة التنقل">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav mx-lg-auto gap-lg-1">
+            <li class="nav-item">
+              <a class="nav-link" href="../landingpage.html#home">الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./report-creature.html" aria-current="page">
+                الإبلاغ عن كائن 
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./educational-resources.html" aria-current="page">
+                المصادر التعليمية
+              </a>
+            </li>
+
+          </ul>
+
+          <div class="nav-actions d-flex flex-column flex-lg-row gap-2">
+            <a class="btn btn-ghost" href="./index.html">تسجيل الدخول</a>
+            <a class="btn btn-green" href="./index.html#register">إنشاء حساب</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <!-- <p class="eyebrow"><span></span> WILDLIFE OF JORDAN</p> -->
+        <h1>اكتشف الحياة البرية<br><em>في الأردن</em></h1>
+        <p class="hero-copy">تعرّف على الثعابين والعقارب والعناكب التي تعيش حولنا، واكتشف صفاتها وموائلها وكيفية التعامل
+          معها بأمان واحترام.</p>
+        <div class="hero-actions"><a class="primary-btn" href="#categories">ابدأ الاستكشاف <i
+              class="bi bi-arrow-left"></i></a><a class="text-btn" href="#safety">تعلّم كيف تبقى بأمان <i
+              class="bi bi-shield-check"></i></a></div>
+        <p class="hero-note"><i class="bi bi-geo-alt"></i> من الصحارى إلى الجبال — اكتشف تنوّع الحياة البرية الأردنية
+        </p>
+      </div><a class="scroll-cue" href="#categories" aria-label="انتقل إلى الفئات"><span></span></a>
+    </section>
+    <section class="wrap categories" id="categories">
+      <header class="section-heading">
+        <div>
+          <p class="eyebrow">EXPLORE THE WILD</p>
+          <h2>استكشف عالم الكائنات</h2>
+          <p>اختر فئة واكتشف المزيد عن الكائنات الموجودة في الأردن.</p>
+        </div><span class="heading-icon"><i class="bi bi-compass"></i></span>
+      </header>
+      <div class="category-grid">
+        <a class="category-card" href="#snakes"><img
+            src="../images/snakes.png"
+            alt="ثعبان في الطبيعة" loading="lazy"><span class="shade"></span><span class="category-copy"><small>01 /
+              REPTILES</small><strong>الثعابين</strong><span>تعرّف على الأنواع <i
+                class="bi bi-arrow-left"></i></span></span></a>
+        <a class="category-card" href="#scorpions"><img
+            src="../images/scorpions.png"
+            alt="عقرب في الطبيعة" loading="lazy"><span class="shade"></span><span class="category-copy"><small>02 /
+              ARACHNIDS</small><strong>العقارب</strong><span>تعرّف على الأنواع <i
+                class="bi bi-arrow-left"></i></span></span></a>
+        <a class="category-card" href="#spiders"><img
+            src="../images/spiders.png"
+            alt="عنكبوت في موطنه" loading="lazy"><span class="shade"></span><span class="category-copy"><small>03 /
+              ARACHNIDS</small><strong>العناكب</strong><span>تعرّف على الأنواع <i
+                class="bi bi-arrow-left"></i></span></span></a>
+      </div>
+    </section>
+    <section class="catalog-tools" aria-label="البحث والفئات">
+      <label class="searchbox"><i class="bi bi-search"></i><input type="search"
+          placeholder="ابحث عن الاسم العربي أو العلمي..." aria-label="ابحث عن كائن"><span>⌕</span></label>
+      <div class="filters"><a class="chosen" href="#species">كل الأنواع <small>06</small></a><a
+          href="#snakes">الثعابين</a><a href="#scorpions">العقارب</a><a href="#spiders">العناكب</a></div>
+      <p class="note"><i class="bi bi-info-circle"></i> البحث والفلاتر للعرض البصري فقط في نسخة HTML وCSS.</p>
+    </section>
+    <section class="wrap species" id="species">
+      <header class="section-heading">
+        <div>
+          <p class="eyebrow">FIELD GUIDE / JORDAN</p>
+          <h2>تعرّف على الأنواع</h2>
+          <p>معلومات تعليمية تساعدك على فهم الحياة البرية وملاحظتها بمسؤولية.</p>
+        </div><span class="catalog-label"><i class="bi bi-grid"></i> دليل الحياة البرية</span>
+      </header>
+      <div class="species-grid">
+        <article class="species-card" id="snakes"><a class="species-image" href="#safety"><img
+              src="../images/snakes.png"
+              alt="ثعبان بني" loading="lazy"><span class="tag">دليل الثعابين</span><span class="arrow"><i
+                class="bi bi-arrow-up-left"></i></span></a>
+          <div class="card-body">
+            <div class="meta"><span>الزواحف</span><span>01</span></div>
+            <h3>الثعابين في الأردن</h3>
+            <p class="latin">Snakes of Jordan</p>
+            <p class="description">تعرّف على تنوّع الثعابين وطرق التمييز بين الأنواع، مع تجنّب الاقتراب منها أو محاولة
+              لمسها.</p><a class="read-link" href="#safety">اقرأ الدليل <i class="bi bi-arrow-left"></i></a>
+          </div>
+        </article>
+        <article class="species-card" id="scorpions"><a class="species-image" href="#safety"><img
+              src="../images/scorpions.png"
+              alt="عقرب على أرض صخرية" loading="lazy"><span class="tag warning">تعرّف بحذر</span><span class="arrow"><i
+                class="bi bi-arrow-up-left"></i></span></a>
+          <div class="card-body">
+            <div class="meta"><span>العنكبيّات</span><span>02</span></div>
+            <h3>العقارب وموائلها</h3>
+            <p class="latin">Scorpions of Jordan</p>
+            <p class="description">تعيش العقارب في بيئات مختلفة، وقد تختبئ تحت الصخور أو بين النباتات. لا ترفع الصخور
+              بيديك.</p><a class="read-link" href="#safety">اقرأ الدليل <i class="bi bi-arrow-left"></i></a>
+          </div>
+        </article>
+        <article class="species-card" id="spiders"><a class="species-image" href="#safety"><img
+              src="../images/spiders.png"
+              alt="عنكبوت في الطبيعة" loading="lazy"><span class="tag">دليل العناكب</span><span class="arrow"><i
+                class="bi bi-arrow-up-left"></i></span></a>
+          <div class="card-body">
+            <div class="meta"><span>العنكبيّات</span><span>03</span></div>
+            <h3>العناكب حولنا</h3>
+            <p class="latin">Spiders of Jordan</p>
+            <p class="description">تعرّف على أشكال العناكب وموائلها، ولا تعتمد على اللون أو الصورة وحدهما لتحديد النوع
+              أو خطورته.</p><a class="read-link" href="#safety">اقرأ الدليل <i class="bi bi-arrow-left"></i></a>
+          </div>
+        </article>
+        <article class="species-card"><a class="species-image" href="#safety"><img
+              src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=900&q=85"
+              alt="كثبان رملية" loading="lazy"><span class="tag green">الموائل الطبيعية</span><span class="arrow"><i
+                class="bi bi-arrow-up-left"></i></span></a>
+          <div class="card-body">
+            <div class="meta"><span>البيئة</span><span>04</span></div>
+            <h3>أين تعيش الكائنات البرية؟</h3>
+            <p class="latin">Habitats &amp; Environment</p>
+            <p class="description">من المناطق الصخرية إلى البيئات الصحراوية، يؤثر الموطن في طريقة عيش الكائنات
+              واختبائها.</p><a class="read-link" href="#safety">اقرأ المقال <i class="bi bi-arrow-left"></i></a>
+          </div>
+        </article>
+        <article class="species-card"><a class="species-image" href="#safety"><img
+              src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=900&q=85"
+              alt="أشجار وموطن بري" loading="lazy"><span class="tag green">وعي بيئي</span><span class="arrow"><i
+                class="bi bi-arrow-up-left"></i></span></a>
+          <div class="card-body">
+            <div class="meta"><span>الملاحظة</span><span>05</span></div>
+            <h3>راقب الحياة البرية بمسؤولية</h3>
+            <p class="latin">Responsible Wildlife Watching</p>
+            <p class="description">المشاهدة من مسافة آمنة تحميك وتحافظ على سلوك الكائنات الطبيعي دون إزعاجها.</p><a
+              class="read-link" href="#safety">اقرأ المقال <i class="bi bi-arrow-left"></i></a>
+          </div>
+        </article>
+        <article class="species-card"><a class="species-image" href="#safety"><img
+              src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=900&q=85"
+              alt="حياة برية في الطبيعة" loading="lazy"><span class="tag warning">إرشادات مهمة</span><span
+              class="arrow"><i class="bi bi-arrow-up-left"></i></span></a>
+          <div class="card-body">
+            <div class="meta"><span>السلامة</span><span>06</span></div>
+            <h3>ماذا تفعل عند رؤية كائن؟</h3>
+            <p class="latin">Wildlife Encounter Safety</p>
+            <p class="description">حافظ على مسافة مناسبة، ولا تحاول الإمساك بالكائن أو نقله، واطلب المساعدة المختصة عند
+              الحاجة.</p><a class="read-link" href="#safety">اقرأ الدليل <i class="bi bi-arrow-left"></i></a>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="safety-feature wrap" id="safety">
+      <div class="safety-photo"><img
+          src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1200&q=85"
+          alt="طبيعة خضراء" loading="lazy"><span><i class="bi bi-leaf"></i> احترام الطبيعة يبدأ بالمعرفة</span></div>
+      <div class="safety-copy">
+        <p class="eyebrow">KNOWLEDGE KEEPS US SAFE</p>
+        <h2>المعرفة تحميك وتحمي الحياة البرية</h2>
+        <p>التعرّف على الكائنات يساعدنا على التعامل مع وجودها بوعي، دون إيذائها أو تعريض أنفسنا للخطر.</p>
+        <ul>
+          <li><i class="bi bi-check-circle-fill"></i> حافظ على مسافة آمنة ولا تلمس الكائنات البرية.</li>
+          <li><i class="bi bi-check-circle-fill"></i> لا تعتمد على الصور وحدها لتحديد النوع.</li>
+          <li><i class="bi bi-check-circle-fill"></i> اطلب المساعدة من جهة مختصة عند الحاجة.</li>
+        </ul><a class="primary-btn" href="../pages/report-creature.html">الإبلاغ عن مشاهدة <i
+            class="bi bi-arrow-left"></i></a>
+      </div>
+    </section>
+  </main>
+ <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <a class="brand footer-brand" href="../landingpage.html#home">
+            <img class="brand-logo theme-logo" src="../images/MyLogo.png" data-light-src="../images/MyLogo.png"
+              data-dark-src="../images/MyLogo.png" alt="WildGuard" />
+            WildGuard
+          </a>
+          <p class="footer-blurb">
+            اكتشف الحياة البرية في الأردن، وتعلّم كيف تحافظ على سلامتك،
+            وساهم في حماية الإنسان والطبيعة.
+          </p>
+        </div>
+
+        <nav class="col-6 col-lg-2 offset-lg-1" aria-labelledby="footer-explore">
+          <h2 class="footer-title" id="footer-explore">استكشف</h2>
+          <ul class="footer-links list-unstyled">
+            <li><a href="../landingpage.html#home">الرئيسية</a></li>
+            <li><a href="../landingpage.html#features">المميزات</a></li>
+            <li><a href="../landingpage.html#about">من نحن</a></li>
+            <li><a href="../landingpage.html#contact">تواصل معنا</a></li>
+          </ul>
+        </nav>
+
+        <nav class="col-6 col-lg-2" aria-labelledby="footer-account">
+          <h2 class="footer-title" id="footer-account">الحساب</h2>
+          <ul class="footer-links list-unstyled">
+            <li><a href="./index.html">تسجيل الدخول</a></li>
+            <li><a href="./index.html#register">إنشاء حساب</a></li>
+          </ul>
+        </nav>
+
+        <div class="col-lg-2">
+          <h2 class="footer-title">تواصل معنا</h2>
+          <address class="footer-links mb-0">
+            <a href="mailto:ahmedkayyali2002@gmail.com">
+              ahmedkayyali2002@gmail.com
+            </a>
+          </address>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <small>
+          © <span id="year">2026</span> WildGuard. جميع الحقوق محفوظة.
+        </small>
+        <a href="../landingpage.html#home" class="back-to-top">
+          العودة إلى الأعلى <i class="bi bi-arrow-up" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,717 @@
+/* =========================================================
+   WildGuard — Report a Creature
+   Drop-in replacement for css/report-creature.css
+   No HTML changes needed. Uses :has() for selected states.
+   ========================================================= */
+
+/* ---------- Tokens (tied to the shared theme variables in variables.css) ---------- */
+.report-page {
+  --rc-bg: var(--bg, #eef4f1);
+  --rc-surface: #ffffff;
+  --rc-surface-2: #f5f9f7;
+  --rc-ink: var(--ink, #14261d);
+  --rc-muted: var(--muted, #5b6b62);
+  --rc-line: var(--line, #d9e5df);
+  --rc-line-strong: #b9cdc4;
+
+  --rc-green: var(--g5, #0f9d6b);
+  --rc-green-dark: var(--g7, #0a7a54);
+  --rc-green-text: var(--g7, #0a7a54);
+  --rc-green-soft: var(--g1, #e0f5ec);
+
+  --rc-amber: #a85f00;
+  --rc-amber-soft: #fbf0dc;
+  --rc-danger: var(--red, #b3261e);
+
+  --rc-radius: 16px;      /* panels */
+  --rc-radius-sm: 10px;   /* controls */
+  --rc-shadow: 0 1px 2px rgba(5, 53, 42, 0.05), 0 8px 24px -12px rgba(5, 53, 42, 0.14);
+
+  background: var(--rc-bg);
+  color: var(--rc-ink);
+  font-family: "Outfit", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* Dark mode: landing.css uses html[data-theme="dark"] */
+html[data-theme="dark"] .report-page {
+  --rc-surface: var(--surface, #15231c);
+  --rc-surface-2: color-mix(in srgb, var(--surface, #15231c) 80%, #fff 6%);
+  --rc-line-strong: color-mix(in srgb, var(--line, #26382e) 70%, #fff 20%);
+
+  --rc-green-text: #6fd3a1;
+  --rc-green-soft: color-mix(in srgb, var(--g5, #0f9d6b) 22%, var(--surface, #15231c));
+
+  --rc-amber: #f0b050;
+  --rc-amber-soft: #2e2413;
+  --rc-danger: #ff8a80;
+  --rc-shadow: none;
+}
+
+/* ---------- Layout ---------- */
+.report-page .report-page-main {
+  padding: clamp(6rem, 10vw, 8rem) 0 4.5rem;
+}
+
+.report-page .report-container {
+  max-width: 880px;
+}
+
+.report-page .page-heading {
+  margin-bottom: 2rem;
+}
+
+.report-page .page-heading h1 {
+  font-size: clamp(2rem, 4.5vw, 2.9rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.6rem;
+  color: var(--rc-ink);
+}
+
+.report-page .page-subtitle {
+  margin: 0;
+  max-width: 52ch;
+  font-size: 1.08rem;
+  line-height: 1.55;
+  color: var(--rc-muted);
+}
+
+.report-page .report-form {
+  display: grid;
+  gap: 1.25rem;
+}
+
+/* ---------- Panels ---------- */
+.report-page .form-section {
+  background: var(--rc-surface);
+  border: 1px solid var(--rc-line);
+  border-radius: var(--rc-radius);
+  padding: 1.75rem;
+  box-shadow: var(--rc-shadow);
+}
+
+.report-page .section-heading {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.25rem 1rem;
+  align-items: start;
+  margin-bottom: 1.5rem;
+}
+
+.report-page .section-heading h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 0.2rem;
+  color: var(--rc-ink);
+}
+
+.report-page .section-heading p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--rc-muted);
+}
+
+.report-page .step-number {
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 50%;
+  background: var(--rc-green-soft);
+  color: var(--rc-green-text);
+  border: 1px solid color-mix(in srgb, var(--rc-green) 35%, transparent);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Heading variant: title + tag on one line, description below */
+.report-page .heading-inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.2rem 0.75rem;
+}
+
+.report-page .heading-inline h2 {
+  margin: 0;
+}
+
+.report-page .heading-inline p {
+  flex-basis: 100%;
+}
+
+.report-page .field-tag {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.report-page .required-tag {
+  background: var(--rc-amber-soft);
+  color: var(--rc-amber);
+}
+
+.report-page .optional-tag {
+  background: var(--rc-surface-2);
+  color: var(--rc-muted);
+  border: 1px solid var(--rc-line);
+}
+
+/* ---------- 1. Report type (segmented control) ---------- */
+.report-page .report-type-tabs {
+  display: inline-flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  margin-bottom: 1.25rem;
+  background: var(--rc-surface-2);
+  border: 1px solid var(--rc-line);
+  border-radius: 12px;
+}
+
+.report-page .type-tab {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 9px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--rc-muted);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.report-page .type-tab input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.report-page .type-tab:hover {
+  color: var(--rc-ink);
+}
+
+.report-page .type-tab:has(input:checked) {
+  background: var(--rc-surface);
+  color: var(--rc-green-text);
+  box-shadow: 0 1px 3px rgba(20, 38, 29, 0.14);
+}
+
+.report-page .type-tab:has(input:focus-visible) {
+  outline: 3px solid color-mix(in srgb, var(--rc-green) 45%, transparent);
+  outline-offset: 1px;
+}
+
+/* ---------- 1. Creature picker (the main interaction) ---------- */
+.report-page .creature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+  gap: 0.75rem;
+}
+
+.report-page .creature-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 1.15rem 0.5rem 1rem;
+  background: var(--rc-surface);
+  border: 1.5px solid var(--rc-line);
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, transform 0.15s;
+}
+
+.report-page .creature-card input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.report-page .creature-emoji {
+  font-size: 2.1rem;
+  line-height: 1;
+}
+
+.report-page .creature-name {
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--rc-ink);
+}
+
+.report-page .creature-card:hover {
+  border-color: var(--rc-line-strong);
+  background: var(--rc-surface-2);
+}
+
+.report-page .creature-card:has(input:checked) {
+  border-color: var(--rc-green);
+  background: var(--rc-green-soft);
+}
+
+.report-page .creature-card:has(input:checked) .creature-name {
+  color: var(--rc-green-text);
+  font-weight: 600;
+}
+
+/* Check badge drawn in CSS so it works for every card */
+.report-page .creature-card::after {
+  content: "\2713";
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: grid;
+  place-items: center;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  background: var(--rc-green);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.15s, transform 0.15s;
+}
+
+.report-page .creature-card:has(input:checked)::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.report-page .choice-check {
+  display: none;
+}
+
+.report-page .creature-card:has(input:focus-visible) {
+  outline: 3px solid color-mix(in srgb, var(--rc-green) 45%, transparent);
+  outline-offset: 2px;
+}
+
+/* Show only the relevant cards for "Individual" vs "Nest or Colony" */
+.report-page .report-form:has(input[name="report-type"][value="individual"]:checked)
+  .creature-card:has(input[value="bee-hive"], input[value="wasp-nest"], input[value="other-nest"]) {
+  display: none;
+}
+
+.report-page .report-form:has(input[name="report-type"][value="nest"]:checked)
+  .creature-card:not(:has(input[value="bee-hive"], input[value="wasp-nest"], input[value="other-nest"])) {
+  display: none;
+}
+
+/* ---------- 2. Upload ---------- */
+.report-page .upload-area {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 2.2rem 1rem;
+  background: var(--rc-surface-2);
+  border: 1.5px dashed var(--rc-line-strong);
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.report-page .upload-area input[type="file"] {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.report-page .upload-area:hover,
+.report-page .upload-area:focus-within {
+  border-color: var(--rc-green);
+  background: var(--rc-green-soft);
+}
+
+.report-page .upload-icon {
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--rc-green-text);
+}
+
+.report-page .upload-area strong {
+  font-weight: 500;
+  color: var(--rc-ink);
+}
+
+.report-page .upload-area strong span {
+  color: var(--rc-green-text);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.report-page .upload-area small {
+  color: var(--rc-muted);
+  font-size: 0.85rem;
+}
+
+/* ---------- Form controls ---------- */
+.report-page .location-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+.report-page .location-grid .field:nth-child(3) {
+  grid-column: 1 / -1;
+}
+
+.report-page .field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.report-page .field > span {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--rc-ink);
+}
+
+.report-page .field > span b {
+  color: var(--rc-danger);
+  font-weight: 600;
+}
+
+.report-page .field > span em {
+  font-style: normal;
+  font-weight: 400;
+  color: var(--rc-muted);
+}
+
+.report-page .field select,
+.report-page .field input[type="text"],
+.report-page .field textarea {
+  width: 100%;
+  padding: 0.75rem 0.95rem;
+  background-color: var(--rc-surface);
+  color: var(--rc-ink);
+  border: 1.5px solid var(--rc-line-strong);
+  border-radius: var(--rc-radius-sm);
+  font: inherit;
+  font-size: 0.97rem;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.report-page .field ::placeholder {
+  color: color-mix(in srgb, var(--rc-muted) 80%, transparent);
+}
+
+.report-page .field select:focus,
+.report-page .field input[type="text"]:focus,
+.report-page .field textarea:focus {
+  outline: none;
+  border-color: var(--rc-green);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--rc-green) 22%, transparent);
+}
+
+.report-page .field select {
+  appearance: none;
+  padding-right: 2.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%235b6b62' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='m3 6 5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  cursor: pointer;
+}
+
+.report-page .input-icon {
+  position: relative;
+}
+
+.report-page .input-icon i {
+  position: absolute;
+  left: 0.95rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--rc-muted);
+  pointer-events: none;
+}
+
+.report-page .input-icon input {
+  padding-left: 2.6rem !important;
+}
+
+.report-page .field textarea {
+  min-height: 150px;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+.report-page .textarea-hint {
+  font-size: 0.85rem;
+  color: var(--rc-muted);
+}
+
+.report-page .location-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.1rem;
+  padding: 0.6rem 1.1rem;
+  background: transparent;
+  color: var(--rc-green-text);
+  border: 1.5px solid var(--rc-green);
+  border-radius: var(--rc-radius-sm);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.report-page .location-button:hover {
+  background: var(--rc-green-soft);
+}
+
+/* ---------- 5. Optional details (pills) ---------- */
+.report-page .details-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.report-page .details-grid {
+  align-items: start;
+}
+
+.report-page .choice-group {
+  display: block;
+  height: auto;
+  min-height: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+.report-page .choice-group legend {
+  float: none;
+  width: auto;
+  margin: 0 0 0.6rem;
+  padding: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--rc-ink);
+}
+
+.report-page .choice-group .pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 0.5rem;
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.report-page .choice-group .pills label {
+  position: relative;
+  display: block;
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.report-page .pills input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.report-page .pills span {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  background: var(--rc-surface);
+  color: var(--rc-ink);
+  border: 1.5px solid var(--rc-line-strong);
+  border-radius: 999px;
+  font-size: 0.92rem;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.report-page .pills span small {
+  color: var(--rc-muted);
+  font-size: 0.8rem;
+}
+
+.report-page .pills label:hover span {
+  border-color: var(--rc-green);
+}
+
+.report-page .pills input:checked + span {
+  background: var(--rc-green);
+  border-color: var(--rc-green);
+  color: #fff;
+}
+
+.report-page .pills input:checked + span small {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.report-page .pills input:focus-visible + span {
+  outline: 3px solid color-mix(in srgb, var(--rc-green) 45%, transparent);
+  outline-offset: 2px;
+}
+
+/* ---------- Safety notice ---------- */
+.report-page .safety-notice {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.1rem 1.3rem;
+  background: var(--rc-amber-soft);
+  border: 1px solid color-mix(in srgb, var(--rc-amber) 30%, transparent);
+  border-left: 5px solid var(--rc-amber);
+  border-radius: 12px;
+}
+
+.report-page .safety-notice > i {
+  font-size: 1.4rem;
+  line-height: 1.2;
+  color: var(--rc-amber);
+}
+
+.report-page .safety-notice strong {
+  display: block;
+  margin-bottom: 0.15rem;
+  font-weight: 600;
+  color: var(--rc-ink);
+}
+
+.report-page .safety-notice p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--rc-ink);
+}
+
+/* ---------- Footer / submit ---------- */
+.report-page .form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 0.25rem;
+}
+
+.report-page .form-footer p {
+  flex: 1;
+  margin: 0;
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--rc-muted);
+}
+
+.report-page .form-footer p i {
+  margin-top: 0.15rem;
+}
+
+.report-page .submit-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.7rem;
+  background: var(--rc-green);
+  color: #fff;
+  border: 0;
+  border-radius: 12px;
+  font: inherit;
+  font-weight: 600;
+  font-size: 1rem;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.report-page .submit-button:hover {
+  background: var(--rc-green-dark);
+}
+
+.report-page .submit-button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--rc-green) 50%, transparent);
+  outline-offset: 3px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 767.98px) {
+  .report-page .form-section {
+    padding: 1.35rem;
+  }
+
+  .report-page .location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .report-page .creature-grid {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  }
+
+  .report-page .form-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .report-page .submit-button {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .report-page .section-heading {
+    grid-template-columns: auto 1fr;
+  }
+
+  .report-page .section-heading .field-tag {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .report-page .report-type-tabs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .report-page * {
+    transition: none !important;
+  }
+}
+
+/* ---------- Header: same look as landing.css .is-scrolled, from the first paint ---------- */
+.report-page .site-header {
+  padding: 0.5rem 0;
+  background: rgba(5, 53, 42, 0.92);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+}
